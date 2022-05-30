@@ -1,0 +1,103 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
+
+html, body {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    vertical-align: middle;
+    font-family: 'Open Sans', sans-serif;
+    background-image: url('https://fastcdn.pro/FileGallery/sermehiranian.com/Posts/3360_SL%20CR.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.wrap-container {
+    display: flex;
+    text-align: center;
+    color: #fff;
+}
+
+.left {
+    background-color: #fff;
+    color: #000;
+    text-align: left;
+    padding: 1em 2em;
+    height: 100%;
+    width: 12em;
+    margin-top: 16%;
+    padding-bottom: 2em;
+    opacity: 80%;
+}
+
+.left p {
+    font-weight: 300;
+}
+
+h1 {
+    font-weight: 800;
+    font-size: 180%;
+    letter-spacing: 0.06em;
+}
+
+.right {
+    width: 24em;
+    padding: 4em;
+    background: rgba(0, 0, 0, 0.884);
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    padding-bottom: 3em;
+    position: relative;
+    height: 16em;
+}
+
+#login-username {
+    margin-top: 1.5em;
+}
+
+input {
+    outline: none;
+    border-bottom: 1px solid #fff;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #fff;
+    outline: none;
+    background: transparent;
+}
+
+button {
+    background: none;
+    border: none;
+    font-size: 120%;
+    color: rgba(255, 255, 255, 0.362);
+    margin-top: 0.5em;
+    margin-bottom: 1em;
+}
+
+button:hover {
+    color: #fff;
+    cursor: pointer;
+}
+
+.right div {
+    color: rgba(255, 255, 255, 0.793);
+    position: absolute;
+    bottom: 5%;
+}
+
+.right a {
+    color: rgba(0, 255, 255, 0.685);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 255, 255, 0.685);
+}
+
+.right a:hover {
+    color: aqua;
+    text-decoration: none;
+    border-bottom: 1px solid aqua;
+}
