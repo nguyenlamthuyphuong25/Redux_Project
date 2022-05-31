@@ -1,7 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
 
-html, body {
-    height: 100%;
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+.wrap-container {
+    text-align: center;
+    color: #fff;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -11,12 +18,7 @@ html, body {
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-
-.wrap-container {
-    display: flex;
-    text-align: center;
-    color: #fff;
+    height: 100vh;
 }
 
 .left {
@@ -24,21 +26,24 @@ html, body {
     color: #000;
     text-align: left;
     padding: 1em 2em;
-    height: 100%;
-    width: 12em;
-    margin-top: 16%;
+    height: 25%;
+    width: 16em;
     padding-bottom: 2em;
     opacity: 80%;
+    font-size: 120%;
 }
 
 .left p {
     font-weight: 300;
+    margin-top: 1em;
+    font-size: 80%;
 }
 
-h1 {
+.left h1 {
     font-weight: 800;
-    font-size: 180%;
+    font-size: 200%;
     letter-spacing: 0.06em;
+    margin-top: 2em;
 }
 
 .right {
@@ -49,7 +54,7 @@ h1 {
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     padding-bottom: 3em;
     position: relative;
-    height: 16em;
+    height: 400px;
 }
 
 #login-username {
@@ -70,16 +75,16 @@ input {
     background: transparent;
 }
 
-button {
+.button-signin {
     background: none;
     border: none;
     font-size: 120%;
-    color: rgba(255, 255, 255, 0.362);
     margin-top: 0.5em;
     margin-bottom: 1em;
+    color: rgba(255, 255, 255, 0.356);
 }
 
-button:hover {
+.button-signin:hover {
     color: #fff;
     cursor: pointer;
 }

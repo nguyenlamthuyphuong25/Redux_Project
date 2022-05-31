@@ -32,13 +32,13 @@ export const NavBar: React.FC = () => {
       </nav>
 
       <div className="SearchNCart">
-        <ImSearch />
+        <span><ImSearch /></span>
 
-        <Link to="/carts">
-          <BiCartAlt />
-        </Link>
+        <span><Link to="/carts">
+          <BiCartAlt className='nav-icon-shopping'></BiCartAlt>
+        </Link></span>
 
-        <Link to="/login"></Link>
+        <span><Link className='login-button' to="/login">Login</Link></span>
       </div>
     </div>
   )

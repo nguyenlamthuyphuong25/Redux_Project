@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
+
 // import { Link } from 'react-router-dom'
 import './Login.css'
 
-export default function Login(): any {
+export const Login: React.FC = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -39,7 +40,7 @@ export default function Login(): any {
             required
           />
           <br />
-          <button>Sign in</button>
+          <button className='button-signin'>Sign in</button>
           <div>{/* No account, <Link to="/signup">Sign Up</Link> here */}</div>
         </div>
       </form>

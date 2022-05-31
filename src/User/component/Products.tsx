@@ -13,13 +13,6 @@ export const Products: React.FC = () => {
   const cart = useSelector((state: AppState) => state.users.cart)
   const dispatch = useDispatch()
 
-  const show = () => {
-    var tempCart: ICartItem[] = cart
-    for (var c of tempCart) {
-      console.log(c.name + ":" + c.quantity)
-    }
-  }
-
   useEffect(() => {
     const getItems = async () => {
       const data = await getDocs(itemCollectionRef)
@@ -41,14 +34,16 @@ export const Products: React.FC = () => {
 
   return (
     <>
+      <h1 className='product-title'>Products</h1>
       {items.length > 0 &&
         items.map((item: any, index: number) => {
           return (
-            <div key={index}>
-              <h3>{item.name} </h3>
-              <h3>{item.price}$ </h3>
-              <img className="CartImg" src={item.imgUrl} alt="shop img" />
-              <button
+            <div className='product-items' key={index}>
+              <img id='product-cart-img' className="CartImg" src={item.imgUrl} alt="shop img" />
+              <div className='product-cart-info'>
+                <h3>{item.name} </h3>
+                <h4>{item.price}$ </h4>
+                <button className='add-to-cart'
                 onClick={() => {
                   dispatch(
                     addToCart({
@@ -62,9 +57,9 @@ export const Products: React.FC = () => {
                   )
                 }}
               >
-                Add User
+                Add
               </button>
-              <button onClick={show}> show </button>
+              </div>
             </div>
           )
         })}

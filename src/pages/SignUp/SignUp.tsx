@@ -47,7 +47,7 @@ export default function SignUp(): any {
             required
           />
           <br />
-          <button>Sign up</button>
+          <button className='button-signup'>Sign up</button>
           <div>{/* Have an account, <Link to="/">Sign in</Link> here */}</div>
         </div>
       </form>
