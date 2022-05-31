@@ -37,6 +37,8 @@ export const NavBar: React.FC = () => {
         <Link to="/carts">
           <BiCartAlt />
         </Link>
+
+        <Link to="/login"></Link>
       </div>
     </div>
   )
