@@ -9,7 +9,7 @@ import { Products } from './User/component/Products'
 function App() {
   return (
     <div>
-      <Products />
+      {/* <Products /> */}
       <Carts />
     </div>
   )

@@ -42,9 +42,9 @@ export const Products: React.FC = () => {
   return (
     <>
       {items.length > 0 &&
-        items.map((item: any) => {
+        items.map((item: any, index: number) => {
           return (
-            <div>
+            <div key={index}>
               <h3>{item.name} </h3>
               <h3>{item.price}$ </h3>
               <img className="CartImg" src={item.imgUrl} alt="shop img" />
