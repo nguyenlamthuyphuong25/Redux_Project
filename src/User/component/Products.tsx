@@ -16,7 +16,7 @@ export const Products: React.FC = () => {
   const show = () => {
     var tempCart: ICartItem[] = cart
     for (var c of tempCart) {
-      console.log(c.name)
+      console.log(c.name + ":" + c.quantity)
     }
   }
 
@@ -57,7 +57,8 @@ export const Products: React.FC = () => {
                       id: item.id,
                       imgURL: item.imgUrl,
                       price: item.price,
-                    }),
+                      quantity: item.quantity
+                    }), 
                   )
                 }}
               >
