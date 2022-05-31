@@ -1,0 +1,38 @@
+
+
+.header_container {
+    width: 100%;
+    position: relative;
+    text-align: right;
+    margin-top: 2em;
+    margin-bottom: 4em;
+}
+.header_txt {
+    text-align: left;
+    position: absolute;
+    bottom: -3%;
+    left: 10%;
+    width: 24%;
+    height: 55%;
+    padding: 2em 2em;
+    background: rgba(255, 255, 255, 0.599);
+    backdrop-filter: blur(15px);
+    letter-spacing: 0.1em;
+    border-radius: 35px;
+}
+
+h1 {
+    font-family: 'DM Serif Display';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 300%;
+    line-height: 1.2em;
+    color: #4B4B4B;
+}
+
+.Img {
+    width: 1100px;
+    height: 900px;
+    margin-right: 10%;
+    border-radius: 35px;
+}

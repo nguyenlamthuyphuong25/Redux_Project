@@ -1,0 +1,18 @@
+.NavbarItems {
+    background-color: #FAF4EF;
+    display :flex ;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px 10%;
+}
+.nav-menu li {
+    display: inline-block;
+    padding: 0px 20px ;
+}
+
+.nav-menu a  {
+    text-decoration: none;
+    color: black;
+    font-weight: 900px;
+    font-size: large;
+}
