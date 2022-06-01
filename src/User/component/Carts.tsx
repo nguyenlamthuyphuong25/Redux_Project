@@ -105,7 +105,7 @@ export const Carts: React.FC = () => {
         </table>
 
         <div className="shopping-cart-bill-container">
-          <h1>Order Summary</h1>
+          <h1 className="shopping-cart-bill-checkout-title">Order Summary</h1>
           <div className="shopping-cart-bill">
             <div className="shopping-cart-bill-item">
               <h4>{itemCount} ITEMS</h4>

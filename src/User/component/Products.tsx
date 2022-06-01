@@ -7,6 +7,7 @@ import { AppState } from '../store/store'
 import { useSelector, useDispatch } from 'react-redux'
 import { ICartItem } from '../model/cart-model'
 import { Link, useNavigate } from 'react-router-dom'
+import './Products.css'
 
 export const Products: React.FC = () => {
   const [items, setItems] = useState<any>([])
@@ -62,12 +63,13 @@ export const Products: React.FC = () => {
         items.map((item: any, index: number) => {
           return (
             <div className="product-items" key={index}>
-              <img
+              <div className="product-cart-info-img"><img
                 id="product-cart-img"
                 className="CartImg"
                 src={item.imgUrl}
                 alt="shop img"
               />
+              </div>
               <div className="product-cart-info">
                 <h3>{item.name} </h3>
                 <h4>{item.price}$ </h4>

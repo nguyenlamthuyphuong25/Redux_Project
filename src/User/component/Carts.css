@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
 
+@media only screen and (min-width: 768px) {
 * {
     font-family: 'Montserrat', sans-serif;
     box-sizing: border-box;
@@ -12,11 +13,11 @@
     margin-top: 1em;
 }
 
-table {
+#shopping-cart-modal table {
     width: 70%;
 }
 
-th {
+#shopping-cart-modal th {
     text-transform: uppercase;
     color: rgb(90, 90, 90);
     letter-spacing: 0.08em;
@@ -32,11 +33,11 @@ th {
     height: 100vh;
     text-align: left;
     padding: 2em;
-    padding-left: 3em;
-    width: 28%;
+    width: 30%;
     background-color: rgba(190, 190, 190, 0.373);
     position: absolute;
     right: 0;
+    font-size: 90%;
     top: 0;
 }
 
@@ -79,8 +80,8 @@ th {
     padding-bottom: 1em;
     margin-bottom: 1em;
     border-bottom: 1px solid #333;
-    margin-left: 2em;
-    width: 65.2%;
+    padding-left: 1em;
+    width: 70%;
     margin-top: 1em;
 }
 
@@ -120,6 +121,10 @@ th {
     background-color: #000;
 }
 
+.shopping-cart-bill-checkout-title {
+    font-size: 160%;
+}
+
 .shopping-cart-bill-checkout {
     width: 100%;
     padding: 1em 0;
@@ -133,4 +138,159 @@ th {
 .shopping-cart-bill-checkout:hover {
     background-color: #333;
     cursor: pointer;
+}
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+@media only screen and (max-width: 768px) {
+* {
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+#shopping-cart-modal {
+    width: 100%;
+    text-align: center;
+    margin-top: 1em;
+}
+
+#shopping-cart-modal table {
+    width: 100%;
+    margin-bottom: 300px;
+}
+
+#shopping-cart-modal th {
+    text-transform: uppercase;
+    color: rgb(90, 90, 90);
+    letter-spacing: 0.08em;
+    font-size: 90%;
+    padding-bottom: 0.5em;
+}
+
+#shopping-cart-modal td {
+    font-size: 90%;
+}
+
+.BilItemImg {
+    width: 50px;
+    height: 50px;
+}
+
+.shopping-cart-bill-container {
+    text-align: left;
+    padding: 1em;
+    width: 100%;
+    background-color: rgba(190, 190, 190, 0.373);
+    position: absolute;
+    font-size: 70%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.shopping-cart-bill-container h1 {
+    text-align: center;
+    margin-top: 1em;
+    font-size: 180%;
+}
+
+.shopping-cart-bill {
+    margin: auto;
+    margin-top: 2em;
+    padding: 0 1em;
+    font-size: 110%;
+    width: 90%;
+}
+
+.shopping-cart-bill-item {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2em;
+}
+
+.shopping-cart-bill-total {
+    display: flex;
+    justify-content: space-between;
+}
+
+.shopping-cart-bill-shipping {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #000;
+    margin-top: 2em;
+    margin-bottom: 2em;
+    padding-bottom: 2em;
+}
+
+.shopping-cart-item-name {
+    text-transform: capitalize;
+}
+
+.shoping-cart-header {
+    padding-bottom: 1em;
+    border-bottom: 1px solid #333;
+    padding-left: 1em;
+    width: 100%;
+    font-size: 140%;
+    margin-top: 1em;
+}
+
+.button {
+    background-color: #fff;
+    border: none;
+    font-size: 120%;
+    padding: 0 .4em;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #333;
+    color: #fff;
+    border-radius: 1em;
+    cursor: pointer;
+}
+
+.decrease-button {
+    margin-right: 0.5em;
+}
+
+.increase-button {
+    margin-left: 0.5em;
+}
+
+.del-button {
+    border: none;
+    background-color: red;
+    border-radius: 50%;
+    padding: 0.4em 0.8em;
+    color: #fff;
+}
+
+.del-button:hover {
+    cursor: pointer;
+    background-color: #000;
+}
+
+.shopping-cart-bill-checkout-title {
+    font-size: 140%;
+}
+
+.shopping-cart-bill-checkout {
+    margin-left: 35%;
+    width: 30%;
+    padding: 1em 0;
+    font-size: 110%;
+    margin-top: 1em;
+    background-color: rgba(0, 0, 252, 0.759);
+    color: #fff;
+    border: none;
+}
+
+.shopping-cart-bill-checkout:hover {
+    background-color: #333;
+    cursor: pointer;
+}
+
 }

@@ -21,15 +21,14 @@ export const NavBar: React.FC = () => {
   return (
     <div className="NavbarItems">
       <h1 className="navbar-logo">SHPX</h1>
-
-      <nav>
+      <nav className='navbar-container'>
         <ul className="nav-menu">
           <li>
             <Link to="/">Home</Link>
           </li>
           <li>
             <a className="nav-link" href="/AboutUs">
-              About Us
+              About
             </a>
           </li>
           <li>

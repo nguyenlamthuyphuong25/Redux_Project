@@ -1,45 +1,157 @@
-.NavbarItems {
-    background-color: #FAF4EF;
-    display :flex ;
-    justify-content: space-between;
-    align-items: center;
-    padding: 30px 10%;
-}
-.nav-menu li {
-    display: inline-block;
-    padding: 0px 20px ;
+@media only screen and (min-width: 768px) {
+    .NavbarItems {
+        background-color: #FAF4EF;
+        display :flex ;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1% 5%;
+    }
+    .navbar-logo {
+        width: 20%;
+    }
+    .navbar-container {
+        width: 100%;
+        margin-left: 1%;
+    }
+
+    .nav-menu li {
+        display: inline-block;
+        width: 25%;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+    
+    .nav-menu a  {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.471);
+        font-size: 100%;
+    }
+
+    .nav-menu a:hover  {
+        border-bottom: 2px solid #000;
+        padding-left: 0.6em;
+        padding-right: 0.6em;
+        padding-bottom: 0.5em;
+        color: #000;
+        transition: all 0.5s;
+    }
+
+    .SearchNCart {
+        display: flex;
+        margin-right: -2em;
+    }
+    
+    
+    .SearchNCart span{
+        padding: 0.5em;
+    }
+    
+    .login-button {
+        text-decoration: none;
+        padding: 0.4em 1em;
+        border: 1px solid #ccc;
+        border-radius: 0.4em;
+        background-color: #fff;
+    }
+    
+    .login-button:hover {
+        background-color: rgba(45, 45, 236, 0.884);
+        color: #fff;
+        border: none;
+    }
+    
+    .nav-icon-shopping {
+        color: #000;
+        font-size: 120%;
+    }
+    
+    .nav-icon-shopping:hover {
+        color: rgba(45, 45, 236, 0.884);
+    }
 }
 
-.nav-menu a  {
-    text-decoration: none;
-    color: black;
-    font-weight: 900px;
-    font-size: large;
+@media only screen and (max-width: 768px) {
+    .NavbarItems {
+        background-color: #FAF4EF;
+        display :flex ;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 5%;
+    }
+    .navbar-logo {
+        width: 20%;
+        font-size: 100%;
+    }
+    .navbar-container {
+        width: 100%;
+        margin-left: 1%;
+    }
+
+    .nav-menu li {
+        font-size: 70%;
+        display: inline-block;
+        width: 16%;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-right: 1em;
+    }
+
+    .nav-menu li:nth-child(3) {
+        margin-right: 3em;
+    }
+    
+    .nav-menu a  {
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.471);
+        font-size: 100%;
+    }
+
+    .nav-menu a:hover  {
+        border-bottom: 2px solid #000;
+        padding-left: 0.4em;
+        padding-right: 0.4em;
+        padding-bottom: 0.5em;
+        color: #000;
+        transition: all 0.5s;
+    }
+
+    .SearchNCart {
+        display: flex;
+        font-size: 80%;
+        margin-right: -2em;
+        margin-top: 0.5em;
+        margin-bottom: 0.5em;
+    }
+    
+    .SearchNCart span{
+        padding: 0.5em;
+    }
+    
+    .login-button {
+        text-decoration: none;
+        padding: 0.4em 1em;
+        border: 1px solid #ccc;
+        border-radius: 0.4em;
+        background-color: #fff;
+    }
+    
+    .login-button:hover {
+        background-color: rgba(45, 45, 236, 0.884);
+        color: #fff;
+        border: none;
+    }
+    
+    .nav-icon-shopping {
+        color: #000;
+        font-size: 120%;
+    }
+    
+    .nav-icon-shopping:hover {
+        color: rgba(45, 45, 236, 0.884);
+    }
 }
 
-.SearchNCart span{
-    padding: 0.5em;
-}
 
-.login-button {
-    text-decoration: none;
-    padding: 0.4em 1em;
-    border: 1px solid #ccc;
-    border-radius: 0.4em;
-    background-color: #fff;
-}
 
-.login-button:hover {
-    background-color: rgba(45, 45, 236, 0.884);
-    color: #fff;
-    border: none;
-}
 
-.nav-icon-shopping {
-    color: #000;
-    font-size: 120%;
-}
 
-.nav-icon-shopping:hover {
-    color: rgba(45, 45, 236, 0.884);
-}
