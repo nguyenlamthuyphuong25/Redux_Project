@@ -39,6 +39,7 @@ export const Admin: React.FC = () => {
 
   const closeModal: any = () => {
     setIsOpen(false)
+    console.log()
   }
 
   useEffect(() => {
