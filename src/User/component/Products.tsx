@@ -8,8 +8,6 @@ import { useSelector, useDispatch } from 'react-redux'
 import { ICartItem } from '../model/cart-model'
 import { Link, useNavigate } from 'react-router-dom'
 
-import { createBrowserHistory } from 'history'
-
 export const Products: React.FC = () => {
   const [items, setItems] = useState<any>([])
   const itemCollectionRef = collection(db, 'Items')
