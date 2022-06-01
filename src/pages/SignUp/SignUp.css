@@ -23,21 +23,24 @@
     color: #000;
     text-align: left;
     padding: 1em 2em;
-    height: 100%;
-    width: 12em;
-    margin-top: 16%;
+    height: 25%;
+    width: 16em;
     padding-bottom: 2em;
     opacity: 80%;
+    font-size: 120%;
 }
 
 .left p {
     font-weight: 300;
+    margin-top: 1em;
+    font-size: 80%;
 }
 
-h1 {
+.left h1 {
     font-weight: 800;
-    font-size: 180%;
+    font-size: 200%;
     letter-spacing: 0.06em;
+    margin-top: 1em;
 }
 
 .right {
