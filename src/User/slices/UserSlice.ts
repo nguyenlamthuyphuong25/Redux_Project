@@ -21,7 +21,7 @@ export const userSlice = createSlice({
                 if (item.id == action.payload.id) {
                     state.cart[key].quantity++;
                     check = true;
-                    state.numberCard = state.numberCard + 1
+
                 }
             });
             if (!check) {
@@ -34,23 +34,23 @@ export const userSlice = createSlice({
                     imgName: action.payload.imgName
                 }
                 state.cart.push(cart);
-                state.numberCard = state.numberCard + 1
+
             }
         },
         increaseQuantity: (state, action) => {
-            state.numberCard = state.numberCard + 1;
+
             state.cart[action.payload].quantity = state.cart[action.payload].quantity + 1
         },
         decreaseQuantity: (state, action) => {
             let quantity = state.cart[action.payload].quantity;
             if (quantity > 1) {
-                state.numberCard = state.numberCard - 1;
+
                 state.cart[action.payload].quantity = state.cart[action.payload].quantity - 1;
             }
         },
         delCart: (state, action) => {
             let quantityCart = state.cart[action.payload].quantity;
-            state.numberCard = state.numberCard - quantityCart
+
             state.cart = state.cart.filter(item => {
                 return item.id !== state.cart[action.payload].id
             })
