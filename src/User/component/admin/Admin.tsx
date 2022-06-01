@@ -146,7 +146,7 @@ export const Admin: React.FC = () => {
           }}
         />
         <button className="admin-modal-button-create" onClick={uploadFile}>
-          Create1
+          Create
         </button>
       </Modal>
     </Fragment>

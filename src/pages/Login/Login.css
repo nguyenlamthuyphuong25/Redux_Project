@@ -1,108 +1,215 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap');
 
-* {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+@media only screen and (min-width: 768px) {
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
+
+    .wrap-container {
+        text-align: center;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        font-family: 'Open Sans', sans-serif;
+        background-image: url('https://fastcdn.pro/FileGallery/sermehiranian.com/Posts/3360_SL%20CR.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
+
+    .left {
+        background-color: #fff;
+        color: #000;
+        text-align: left;
+        padding: 1em 2em;
+        height: 25%;
+        width: 16em;
+        padding-bottom: 2em;
+        opacity: 80%;
+        font-size: 120%;
+    }
+
+    .left p {
+        font-weight: 300;
+        margin-top: 1em;
+        font-size: 80%;
+    }
+
+    .left h1 {
+        font-weight: 800;
+        font-size: 200%;
+        letter-spacing: 0.06em;
+        margin-top: 1em;
+    }
+
+    .right {
+        width: 24em;
+        padding: 4em;
+        background: rgba(0, 0, 0, 0.884);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        padding-bottom: 3em;
+        position: relative;
+        height: 400px;
+    }
+
+    #login-username {
+        margin-top: 1.5em;
+    }
+
+    input {
+        outline: none;
+        border-bottom: 1px solid #fff;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+    }
+
+    .button-signin {
+        background: none;
+        border: none;
+        font-size: 120%;
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        color: rgba(255, 255, 255, 0.356);
+    }
+
+    .button-signin:hover {
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .right div {
+        color: rgba(255, 255, 255, 0.793);
+        position: absolute;
+        bottom: 5%;
+    }
+
+    .right a {
+        color: rgba(0, 255, 255, 0.685);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.685);
+    }
+
+    .right a:hover {
+        color: aqua;
+        text-decoration: none;
+        border-bottom: 1px solid aqua;
+    }
 }
 
-.wrap-container {
-    text-align: center;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    vertical-align: middle;
-    font-family: 'Open Sans', sans-serif;
-    background-image: url('https://fastcdn.pro/FileGallery/sermehiranian.com/Posts/3360_SL%20CR.jpg');
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
+@media only screen and (max-width: 768px) {
+    * {
+        box-sizing: border-box;
+        padding: 0;
+        margin: 0;
+    }
 
-.left {
-    background-color: #fff;
-    color: #000;
-    text-align: left;
-    padding: 1em 2em;
-    height: 25%;
-    width: 16em;
-    padding-bottom: 2em;
-    opacity: 80%;
-    font-size: 120%;
-}
+    .wrap-container {
+        text-align: center;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        vertical-align: middle;
+        font-family: 'Open Sans', sans-serif;
+        background-image: url('https://fastcdn.pro/FileGallery/sermehiranian.com/Posts/3360_SL%20CR.jpg');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        height: 100vh;
+    }
 
-.left p {
-    font-weight: 300;
-    margin-top: 1em;
-    font-size: 80%;
-}
+    .left {
+        position: absolute;
+        z-index: 1;
+        top: 24%;
+    }
 
-.left h1 {
-    font-weight: 800;
-    font-size: 200%;
-    letter-spacing: 0.06em;
-    margin-top: 1em;
-}
+    .left p {
+        font-weight: 300;
+        display: none;
+        margin-top: 1em;
+        font-size: 80%;
+    }
 
-.right {
-    width: 24em;
-    padding: 4em;
-    background: rgba(0, 0, 0, 0.884);
-    box-sizing: border-box;
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    padding-bottom: 3em;
-    position: relative;
-    height: 400px;
-}
+    .left h1 {
+        font-weight: 800;
+        font-size: 200%;
+        letter-spacing: 0.06em;
+        margin-top: 1em;
+        text-transform: uppercase;
+    }
 
-#login-username {
-    margin-top: 1.5em;
-}
+    .right {
+        width: 24em;
+        padding: 4em;
+        background: rgba(0, 0, 0, 0.884);
+        box-sizing: border-box;
+        box-shadow: 0 15px 25px rgba(0, 0, 0, .6);
+        padding-bottom: 3em;
+        position: relative;
+        height: 400px;
+    }
 
-input {
-    outline: none;
-    border-bottom: 1px solid #fff;
-    width: 100%;
-    padding: 10px 0;
-    font-size: 16px;
-    color: #fff;
-    margin-bottom: 30px;
-    border: none;
-    border-bottom: 1px solid #fff;
-    outline: none;
-    background: transparent;
-}
+    #login-username {
+        margin-top: 4em;
+    }
 
-.button-signin {
-    background: none;
-    border: none;
-    font-size: 120%;
-    margin-top: 0.5em;
-    margin-bottom: 1em;
-    color: rgba(255, 255, 255, 0.356);
-}
+    input {
+        outline: none;
+        border-bottom: 1px solid #fff;
+        width: 100%;
+        padding: 10px 0;
+        font-size: 16px;
+        color: #fff;
+        margin-bottom: 30px;
+        border: none;
+        border-bottom: 1px solid #fff;
+        outline: none;
+        background: transparent;
+    }
 
-.button-signin:hover {
-    color: #fff;
-    cursor: pointer;
-}
+    .button-signin {
+        background: none;
+        border: none;
+        font-size: 120%;
+        margin-top: 0.5em;
+        margin-bottom: 1em;
+        color: rgba(255, 255, 255, 0.356);
+    }
 
-.right div {
-    color: rgba(255, 255, 255, 0.793);
-    position: absolute;
-    bottom: 5%;
-}
+    .button-signin:hover {
+        color: #fff;
+        cursor: pointer;
+    }
 
-.right a {
-    color: rgba(0, 255, 255, 0.685);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(0, 255, 255, 0.685);
-}
+    .right div {
+        color: rgba(255, 255, 255, 0.793);
+        position: absolute;
+        bottom: 5%;
+    }
 
-.right a:hover {
-    color: aqua;
-    text-decoration: none;
-    border-bottom: 1px solid aqua;
+    .right a {
+        color: rgba(0, 255, 255, 0.685);
+        text-decoration: none;
+        border-bottom: 1px solid rgba(0, 255, 255, 0.685);
+    }
+
+    .right a:hover {
+        color: aqua;
+        text-decoration: none;
+        border-bottom: 1px solid aqua;
+    }
 }
