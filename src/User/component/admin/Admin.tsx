@@ -170,13 +170,8 @@ export const Admin: React.FC = () => {
             console.log(event.target.files[0].name)
           }}
         />
-<<<<<<< Updated upstream
-        <button className="admin-modal-button-create" onClick={uploadFile}>
-          Create
-=======
         <button className="admin-modal-button-create" onClick={createProduct}>
           Create1
->>>>>>> Stashed changes
         </button>
       </Modal>
     </Fragment>
