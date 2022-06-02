@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs } from 'firebase/firestore'
+import { addDoc, collection, deleteDoc, getDocs, doc, DocumentReference, updateDoc } from 'firebase/firestore'
 import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { db, fetchImages } from '../../../firestore-config'
@@ -24,15 +24,24 @@ export const Admin: React.FC = () => {
   const [quantity, setQuantity] = useState<number>(0)
   const [newImgName, setNewImgName] = useState<string>('')
 
+  const [show, setShow] = useState<boolean>(false)
+  const [isRender, setRender] = useState<boolean>(false);
+
   const createProduct = async () => {
+    try{
     await addDoc(itemCollectionRef, {
       name: newName,
       price: Number(price),
       imgName: newImgName,
       quantity: quantity,
-    })
-    uploadFile()
-  }
+      });
+    } catch (err) {
+      console.log(err)
+    }
+    uploadFile();
+    setRender(!isRender);
+    closeModal();
+  };
 
   // function up hình
   const uploadFile = () => {
@@ -58,6 +67,21 @@ export const Admin: React.FC = () => {
     setIsOpen(false)
   }
 
+  const deleteProduct = async (id: any) => {
+    const userDoc: any = doc(db, "Items", id);
+    await deleteDoc(userDoc);
+  };
+
+  const updateProduct = async (id: string, name: string, quantity: number, price: number) => {
+    const userDoc = doc(db, "Items", id);
+    const newFields = {
+      name: newName,
+      price: price,
+      quantity: quantity
+    };
+    await updateDoc(userDoc, newFields);
+  };
+
   useEffect(() => {
     const getItems = async () => {
       const data = await getDocs(itemCollectionRef)
@@ -75,7 +99,7 @@ export const Admin: React.FC = () => {
       console.log(tmpItems)
     }
     getItems()
-  }, [])
+  }, [isRender])
 
   return (
     <Fragment>
@@ -105,13 +129,13 @@ export const Admin: React.FC = () => {
                 <td>
                   <img className="admin-table-img" src={item.imgUrl} />
                 </td>
-                <td>{item.name}</td>
-                <td>{item.quantity}</td>
-                <td>{item.price} $</td>
+                <td>{show ? <input style={{ color: "#000" }} onChange={(e) => setNewName(e.target.value)}/> : item.name }</td>
+                <td>{show ? <input style={{ color: "#000" }} value={item.quantity} /> : item.quantity} </td>
+                <td> {show ? <input style={{ color: "#000" }} value={item.price} /> : item.price } $</td>
                 <td className="admin-icon">
-                  <FaRegEdit />
+                  <FaRegEdit key={index} onClick={() => setShow(!show) } />
                 </td>
-                <td className="admin-icon">
+                <td className="admin-icon" onClick={() => deleteProduct(item.id)} >
                   <FaRegTrashAlt />
                 </td>
               </tr>
