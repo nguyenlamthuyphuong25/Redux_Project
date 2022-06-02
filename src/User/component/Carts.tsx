@@ -51,7 +51,7 @@ export const Carts: React.FC = () => {
     <div>
       <h1 className="shoping-cart-header">Shopping Cart</h1>
       <div id="shopping-cart-modal" className="shopping-cart-container">
-        <table>
+        <table className="shopping-cart-table">
           <thead>
             <tr>
               <th>Image</th>
