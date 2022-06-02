@@ -171,7 +171,7 @@ export const Admin: React.FC = () => {
           }}
         />
         <button className="admin-modal-button-create" onClick={createProduct}>
-          Create1
+          Create
         </button>
       </Modal>
     </Fragment>
