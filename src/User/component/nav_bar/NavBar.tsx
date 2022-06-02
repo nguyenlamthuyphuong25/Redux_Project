@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 
 export const NavBar: React.FC = () => {
   const [isLogin, setIsLogin] = useState<boolean>(false)
+  const [showSearchbtn, setShowSearchbtn] = useState<boolean>(false)
 
   useEffect(() => {
     if (localStorage.getItem('user') !== null) {
@@ -17,6 +18,7 @@ export const NavBar: React.FC = () => {
   const logout = () => {
     localStorage.clear()
   }
+  
 
   return (
     <div className="NavbarItems">
@@ -45,9 +47,6 @@ export const NavBar: React.FC = () => {
       </nav>
 
       <div className="SearchNCart">
-        <span>
-          <ImSearch />
-        </span>
 
         <span>
           <Link to="/carts">

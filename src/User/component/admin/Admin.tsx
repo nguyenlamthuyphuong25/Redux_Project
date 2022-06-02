@@ -141,7 +141,6 @@ export const Admin: React.FC = () => {
           type="text"
           id="admin-modal-name"
         />
-        <br />
         <label className="admin-modal-label" htmlFor="admin-modal-price">
           Price
         </label>
@@ -153,9 +152,8 @@ export const Admin: React.FC = () => {
           type="number"
           id="admin-modal-price"
         />
-        <br />
-        <label className="admin-modal-label" htmlFor="admin-modal-price">
-          Qty
+        <label className="admin-modal-label" htmlFor="admin-modal-quantity">
+          Quantity
         </label>
         <input
           onChange={(event: any) => {
@@ -163,11 +161,8 @@ export const Admin: React.FC = () => {
           }}
           className="admin-modal-content admin-modal-content-price"
           type="number"
-          id="admin-modal-price"
+          id="admin-modal-quantity"
         />
-
-        <br />
-
         <input
           type="file"
           id="admin-modal-imgURL"
