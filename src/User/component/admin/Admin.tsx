@@ -21,6 +21,7 @@ export const Admin: React.FC = () => {
   const [imageUpload, setImageUpload] = useState<any>(null)
   const [newName, setNewName] = useState<string>('')
   const [price, setPrice] = useState<number>(0)
+  const [quantity, setQuantity] = useState<number>(0)
   const [newImgName, setNewImgName] = useState<string>('')
 
   const createProduct = async () => {
@@ -28,6 +29,7 @@ export const Admin: React.FC = () => {
       name: newName,
       price: Number(price),
       imgName: newImgName,
+      quantity: quantity,
     })
     uploadFile()
   }
@@ -91,6 +93,7 @@ export const Admin: React.FC = () => {
           <tr>
             <th>Image</th>
             <th>Name</th>
+            <th>quantity</th>
             <th>Price</th>
             <th colSpan={2}>Operation</th>
           </tr>
@@ -103,6 +106,7 @@ export const Admin: React.FC = () => {
                   <img className="admin-table-img" src={item.imgUrl} />
                 </td>
                 <td>{item.name}</td>
+                <td>{item.quantity}</td>
                 <td>{item.price} $</td>
                 <td className="admin-icon">
                   <FaRegEdit />
@@ -149,6 +153,19 @@ export const Admin: React.FC = () => {
           type="number"
           id="admin-modal-price"
         />
+        <br />
+        <label className="admin-modal-label" htmlFor="admin-modal-price">
+          Qty
+        </label>
+        <input
+          onChange={(event: any) => {
+            setQuantity(Number(event.target.value))
+          }}
+          className="admin-modal-content admin-modal-content-price"
+          type="number"
+          id="admin-modal-price"
+        />
+
         <br />
 
         <input
