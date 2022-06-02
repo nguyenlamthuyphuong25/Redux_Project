@@ -14,7 +14,7 @@
 }
 
 #shopping-cart-modal table {
-    width: 70%;
+    width: 60%;
 }
 
 #shopping-cart-modal th {
@@ -30,7 +30,7 @@
 }
 
 .shopping-cart-bill-container {
-    height: 100vh;
+    height: fit-content;
     text-align: left;
     padding: 2em;
     width: 30%;
@@ -38,7 +38,7 @@
     position: absolute;
     right: 0;
     font-size: 90%;
-    top: 0;
+    top: 20%;
 }
 
 .shopping-cart-bill-container h1 {
@@ -81,7 +81,7 @@
     margin-bottom: 1em;
     border-bottom: 1px solid #333;
     padding-left: 1em;
-    width: 70%;
+    width: 65%;
     margin-top: 1em;
 }
 
