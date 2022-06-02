@@ -150,17 +150,7 @@ export const Admin: React.FC = () => {
           id="admin-modal-price"
         />
         <br />
-        {/* <label className="admin-modal-label" htmlFor="admin-modal-imgName">
-          Image Name
-        </label>
-        <input
-          onChange={(event: any) => {
-            setNewImgName(event.target.value)
-          }}
-          className="admin-modal-content"
-          type="text"
-          id="admin-modal-imgName"
-        /> */}
+
         <input
           type="file"
           id="admin-modal-imgURL"
