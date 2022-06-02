@@ -1,4 +1,4 @@
-import { collection, getDocs } from 'firebase/firestore'
+import { addDoc, collection, getDocs } from 'firebase/firestore'
 import React, { Fragment, useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { db, fetchImages } from '../../../firestore-config'
@@ -8,26 +8,41 @@ import './Admin.css'
 import Modal from 'react-modal'
 import { ref, uploadBytes } from 'firebase/storage'
 import { storage } from '../../../firestore-config'
+import { async } from '@firebase/util'
 
 export const Admin: React.FC = () => {
   const imagesListRef = ref(storage, 'Images/')
-  let subtitle: any
+  //   let subtitle: any
   const [items, setItems] = useState<any>([])
   const itemCollectionRef = collection(db, 'Items')
   const cart = useSelector((state: AppState) => state.users.cart)
   const dispatch = useDispatch()
   const [modalIsOpen, setIsOpen] = React.useState(false)
   const [imageUpload, setImageUpload] = useState<any>(null)
+  const [newName, setNewName] = useState<string>('')
+  const [price, setPrice] = useState<number>(0)
+  const [newImgName, setNewImgName] = useState<string>('')
 
-  const uploadFile = async () => {
+  const createProduct = async () => {
+    await addDoc(itemCollectionRef, {
+      name: newName,
+      price: Number(price),
+      imgName: newImgName,
+    })
+    uploadFile()
+  }
+
+  // function up hình
+  const uploadFile = () => {
     console.log(imageUpload)
+    setNewImgName(imageUpload.name)
     if (imageUpload === null) return
 
     const imageRef = ref(storage, `Images/${imageUpload.name}`)
-    await uploadBytes(imageRef, imageUpload).then((snapshot) => {
-      alert('complete')
+    uploadBytes(imageRef, imageUpload).then((snapshot) => {
+      console.log('imageUpload' + imageUpload.name)
     })
-  }
+  } // kết thúc của function up hình
 
   const openModal: any = () => {
     setIsOpen(true)
@@ -39,7 +54,6 @@ export const Admin: React.FC = () => {
 
   const closeModal: any = () => {
     setIsOpen(false)
-    console.log()
   }
 
   useEffect(() => {
@@ -115,6 +129,10 @@ export const Admin: React.FC = () => {
           Name
         </label>
         <input
+          onChange={(event: any) => {
+            setNewName(event.target.value)
+            console.log(newName)
+          }}
           className="admin-modal-content"
           type="text"
           id="admin-modal-name"
@@ -124,29 +142,41 @@ export const Admin: React.FC = () => {
           Price
         </label>
         <input
+          onChange={(event: any) => {
+            setPrice(Number(event.target.value))
+          }}
           className="admin-modal-content admin-modal-content-price"
           type="number"
           id="admin-modal-price"
         />
         <br />
-        <label className="admin-modal-label" htmlFor="admin-modal-imgName">
+        {/* <label className="admin-modal-label" htmlFor="admin-modal-imgName">
           Image Name
         </label>
         <input
+          onChange={(event: any) => {
+            setNewImgName(event.target.value)
+          }}
           className="admin-modal-content"
           type="text"
           id="admin-modal-imgName"
-        />
+        /> */}
         <input
           type="file"
           id="admin-modal-imgURL"
-          onChange={(e: any) => {
-            setImageUpload(e.target.files[0])
-            console.log(imageUpload)
+          onChange={(event: any) => {
+            setNewImgName(event.target.files[0].name)
+            setImageUpload(event.target.files[0])
+            console.log(event.target.files[0].name)
           }}
         />
+<<<<<<< Updated upstream
         <button className="admin-modal-button-create" onClick={uploadFile}>
           Create
+=======
+        <button className="admin-modal-button-create" onClick={createProduct}>
+          Create1
+>>>>>>> Stashed changes
         </button>
       </Modal>
     </Fragment>
