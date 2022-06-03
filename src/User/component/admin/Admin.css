@@ -68,13 +68,18 @@
     .admin-modal-container {
         background-color: #fbfbfb;
         width: 60%;
-        height: 60%;
+        height: 65%;
         margin: auto;
         margin-top: 6%;
         padding: 2em;
         border: 0.5px solid rgba(0, 0, 0, 0.16);
         position: relative;
         border-radius: 10px;
+    }
+
+    .admin-modal-container-2 {
+        height: 52%;
+        width: 50%
     }
 
     .admin-modal-button-close {
@@ -214,7 +219,19 @@
     .admin-modal-container {
         background-color: #fbfbfb;
         width: 90%;
-        height: 60%;
+        height: 70%;
+        margin: auto;
+        margin-top: 20%;
+        padding: 2em;
+        border: 0.5px solid rgba(0, 0, 0, 0.16);
+        position: relative;
+        border-radius: 10px;
+    }
+
+    .admin-modal-container-2 {
+        background-color: #fbfbfb;
+        width: 90%;
+        height: 55%;
         margin: auto;
         margin-top: 20%;
         padding: 2em;

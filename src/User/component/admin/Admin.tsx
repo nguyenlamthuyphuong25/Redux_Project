@@ -191,7 +191,7 @@ export const Admin: React.FC = () => {
         />
         <br />
         <label className="admin-modal-label" htmlFor="admin-modal-price">
-          Qty
+          Quantity
         </label>
         <input
           onChange={(event: any) => {
@@ -219,7 +219,7 @@ export const Admin: React.FC = () => {
       </Modal>
       
       <Modal
-        className="admin-modal-container"
+        className="admin-modal-container admin-modal-container-2"
         isOpen={modalIsOpen1}
         onAfterOpen={afterOpenModal1}
         onRequestClose={closeModal1}
@@ -256,7 +256,7 @@ export const Admin: React.FC = () => {
         />
         <br />
         <label className="admin-modal-label" htmlFor="admin-modal-price">
-          Qty
+          Quantity
         </label>
         <input
           onChange={(event: any) => {
