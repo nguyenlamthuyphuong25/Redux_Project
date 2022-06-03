@@ -48,6 +48,16 @@
         background-color: #5a7379;
     }
 
+    .admin-search-cart-name {
+        border: 1px solid rgba(0, 0, 0, 0.311);
+        float: left;
+        width: 50%;
+        margin-top: 2em;
+        text-indent: 1em;
+        border-radius: 10px;
+        color: #000;
+    }
+
     .admin-table-img {
         width: 100px;
         height: 100px;
@@ -184,13 +194,13 @@
     }
 
     .admin-table th {
-        padding: 15px;
+        padding: 10px;
         text-align: center;
         color: #fff;
     }
 
     .admin-table td {
-        padding: 15px;
+        padding: 10px;
         text-align: center;
         background-color: #FAF4EF;
     }
@@ -213,6 +223,17 @@
 
     .admin-icon:hover {
         color: rgb(180, 36, 36);
+    }
+
+    .admin-search-cart-name {
+        border: 1px solid rgba(0, 0, 0, 0.311);
+        color: #000;
+        float: left;
+        width: 50%;
+        margin-top: 2em;
+        text-indent: 1em;
+        border-radius: 10px;
+        font-size: 90%;
     }
 
     /* modal-box */

@@ -29,6 +29,7 @@ export const Admin: React.FC = () => {
   const [updateName, setUpdateName] = useState<string>("");
   const [updatePrice, setUpdatePrice] = useState<number>(0);
   const [updateQuantity, setUpdateQuantity] = useState<number>(0);
+  const [inputSearch, setInputSearch] = useState('');
 
   const updateProduct = async (id: string, name: string, price: number, quantity: number) => {
     const userDoc = doc(db, "Items", id);
@@ -124,6 +125,7 @@ export const Admin: React.FC = () => {
           >
             + Create
           </button>
+          <input onChange={(e: any) => setInputSearch(e.target.value)} className="admin-search-cart-name" placeholder='Search...' />
         </caption>
         <thead className="admin-table-head">
           <tr>
@@ -134,7 +136,13 @@ export const Admin: React.FC = () => {
             <th colSpan={2}>Operation</th>
           </tr>
         </thead>
-        {items.map((item: any, index: number) => {
+        {items.filter((item: any) => {
+          if (inputSearch == "") {
+            return item
+          } else if (item.name.toLowerCase().includes(inputSearch.toLowerCase())) {
+            return item
+          }
+        }).map((item: any, index: number) => {
           return (
             <tbody className="admin-table-body" key={index}>
               <tr>
