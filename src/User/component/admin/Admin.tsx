@@ -1,4 +1,4 @@
-import { addDoc, collection, getDocs, onSnapshot, doc, updateDoc } from "firebase/firestore";
+import { addDoc, collection, getDocs, onSnapshot, doc, updateDoc, deleteDoc } from "firebase/firestore";
 import React, { Fragment, useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { db, fetchImages } from "../../../firestore-config";
@@ -53,6 +53,12 @@ export const Admin: React.FC = () => {
     uploadFile();
     setRender(!isRender);
     closeModal();
+  };
+
+  const deleteProduct = async (id: string) => {
+    const userDoc = doc(db, "Items", id);
+    await deleteDoc(userDoc);
+    setRender(!isRender);
   };
 
   // function up hình
@@ -155,8 +161,8 @@ export const Admin: React.FC = () => {
                 <td className="admin-icon">
                   <FaRegEdit onClick={() => {openModal1({id: item.id, name: item.name, price: item.price, quantity: item.quantity})}} />
                 </td>
-                <td className="admin-icon">
-                  <FaRegTrashAlt />
+                <td className="admin-icon" >
+                  <FaRegTrashAlt onClick={() => {deleteProduct(item.id)}} />
                 </td>
               </tr>
             </tbody>
