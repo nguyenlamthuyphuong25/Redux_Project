@@ -75,22 +75,6 @@ export const Admin: React.FC = () => {
     setRender(!isRender)
   }
 
-  const handleCheckOut = async () => {
-    for (var item of cart) {
-      const userDoc = doc(db, 'Items', item.id)
-      var qty = item.totalQuantity - item.quantity
-      if (qty === 0) {
-        deleteDoc(userDoc)
-      }
-      const newUpdateFields = {
-        quantity: qty
-      }
-      await updateDoc(userDoc, newUpdateFields)
-      console.log(userDoc)
-    }
-    dispatch(clearCart([]))
-  }
-
   // function up hình
   const uploadFile = () => {
     console.log(imageUpload)

@@ -41,30 +41,31 @@ export const Login: React.FC = () => {
         <h1>Login</h1>
         <p>This is our furniture shop, Hope you will enjoy it</p>
       </div>
-
-      <div className="right">
-        <input
-          id="login-username"
-          value={username}
-          type="text"
-          placeholder="Username"
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-        <br />
-        <input
-          value={password}
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-          required
-        />
-        <br />
-        <button onClick={login} className="button-signin">
-          Sign in
-        </button>
-        <div>{/* No account, <Link to="/signup">Sign Up</Link> here */}</div>
-      </div>
+      <form>
+        <div className="right">
+          <input
+            id="login-username"
+            value={username}
+            type="text"
+            placeholder="Username"
+            onChange={(e) => setUsername(e.target.value)}
+            required
+          />
+          <br />
+          <input
+            value={password}
+            type="password"
+            placeholder="Password"
+            onChange={(e) => setPassword(e.target.value)}
+            required
+          />
+          <br />
+          <button onClick={login} className="button-signin">
+            Sign in
+          </button>
+          <div>{/* No account, <Link to="/signup">Sign Up</Link> here */}</div>
+        </div>
+      </form>
     </div>
   )
 }

@@ -14,6 +14,7 @@ import {
   increaseQuantity,
   decreaseQuantity,
   delCart,
+  clearCart,
 } from '../slices/UserSlice'
 import './Carts.css'
 import { Link } from 'react-router-dom'
@@ -61,10 +62,13 @@ export const Carts: React.FC = () => {
       if (qty === 0) {
         deleteDoc(userDoc)
       }
-      const newUpdateFields = { quantity: qty }
+      const newUpdateFields = {
+        quantity: qty
+      }
       await updateDoc(userDoc, newUpdateFields)
       console.log(userDoc)
     }
+    dispatch(clearCart([]))
   }
 
   return (
