@@ -213,58 +213,62 @@ export const Admin: React.FC = () => {
         <button className="admin-modal-button-close" onClick={closeModal}>
           x
         </button>
+        <form>
+          <label className="admin-modal-label" htmlFor="admin-modal-name">
+            Name
+          </label>
+          <input
+            onChange={(event: any) => {
+              setNewName(event.target.value)
+              console.log(newName)
+            }}
+            className="admin-modal-content"
+            type="text"
+            id="admin-modal-name"
+            required
+          />
+          <br />
+          <label className="admin-modal-label" htmlFor="admin-modal-price">
+            Price
+          </label>
+          <input
+            onChange={(event: any) => {
+              setPrice(Number(event.target.value))
+            }}
+            className="admin-modal-content admin-modal-content-price"
+            type="number"
+            id="admin-modal-price"
+            required
+          />
+          <br />
+          <label className="admin-modal-label" htmlFor="admin-modal-price">
+            Quantity
+          </label>
+          <input
+            onChange={(event: any) => {
+              setQuantity(Number(event.target.value))
+            }}
+            className="admin-modal-content admin-modal-content-price"
+            type="number"
+            id="admin-modal-price"
+            required
+          />
 
-        <label className="admin-modal-label" htmlFor="admin-modal-name">
-          Name
-        </label>
-        <input
-          onChange={(event: any) => {
-            setNewName(event.target.value)
-            console.log(newName)
-          }}
-          className="admin-modal-content"
-          type="text"
-          id="admin-modal-name"
-        />
-        <br />
-        <label className="admin-modal-label" htmlFor="admin-modal-price">
-          Price
-        </label>
-        <input
-          onChange={(event: any) => {
-            setPrice(Number(event.target.value))
-          }}
-          className="admin-modal-content admin-modal-content-price"
-          type="number"
-          id="admin-modal-price"
-        />
-        <br />
-        <label className="admin-modal-label" htmlFor="admin-modal-price">
-          Quantity
-        </label>
-        <input
-          onChange={(event: any) => {
-            setQuantity(Number(event.target.value))
-          }}
-          className="admin-modal-content admin-modal-content-price"
-          type="number"
-          id="admin-modal-price"
-        />
-
-        <br />
-
-        <input
-          type="file"
-          id="admin-modal-imgURL"
-          onChange={(event: any) => {
-            setNewImgName(event.target.files[0].name)
-            setImageUpload(event.target.files[0])
-            console.log(event.target.files[0].name)
-          }}
-        />
-        <button className="admin-modal-button-create" onClick={createProduct}>
-          Create
-        </button>
+          <br />
+          <input
+            type="file"
+            id="admin-modal-imgURL"
+            onChange={(event: any) => {
+              setNewImgName(event.target.files[0].name)
+              setImageUpload(event.target.files[0])
+              console.log(event.target.files[0].name)
+            }}
+            required
+          />
+          <button className="admin-modal-button-create" onClick={createProduct}>
+            Create
+          </button>
+        </form>
       </Modal>
 
       <Modal
@@ -276,57 +280,61 @@ export const Admin: React.FC = () => {
         <button className="admin-modal-button-close" onClick={closeModal1}>
           x
         </button>
+        <form>
+          <label className="admin-modal-label" htmlFor="admin-modal-name">
+            Name
+          </label>
+          <input
+            onChange={(event: any) => {
+              setUpdateName(event.target.value)
+              console.log(updateName)
+            }}
+            className="admin-modal-content"
+            type="text"
+            id="admin-modal-name"
+            value={updateName}
+            required
+          />
+          <br />
+          <label className="admin-modal-label" htmlFor="admin-modal-price">
+            Price
+          </label>
+          <input
+            onChange={(event: any) => {
+              setUpdatePrice(Number(event.target.value))
+            }}
+            className="admin-modal-content admin-modal-content-price"
+            type="number"
+            id="admin-modal-price"
+            value={updatePrice}
+            required
+          />
+          <br />
+          <label className="admin-modal-label" htmlFor="admin-modal-price">
+            Quantity
+          </label>
+          <input
+            onChange={(event: any) => {
+              setUpdateQuantity(Number(event.target.value))
+            }}
+            className="admin-modal-content admin-modal-content-price"
+            type="number"
+            id="admin-modal-price"
+            value={updateQuantity}
+            required
+          />
 
-        <label className="admin-modal-label" htmlFor="admin-modal-name">
-          Name
-        </label>
-        <input
-          onChange={(event: any) => {
-            setUpdateName(event.target.value)
-            console.log(updateName)
-          }}
-          className="admin-modal-content"
-          type="text"
-          id="admin-modal-name"
-          value={updateName}
-        />
-        <br />
-        <label className="admin-modal-label" htmlFor="admin-modal-price">
-          Price
-        </label>
-        <input
-          onChange={(event: any) => {
-            setUpdatePrice(Number(event.target.value))
-          }}
-          className="admin-modal-content admin-modal-content-price"
-          type="number"
-          id="admin-modal-price"
-          value={updatePrice}
-        />
-        <br />
-        <label className="admin-modal-label" htmlFor="admin-modal-price">
-          Quantity
-        </label>
-        <input
-          onChange={(event: any) => {
-            setUpdateQuantity(Number(event.target.value))
-          }}
-          className="admin-modal-content admin-modal-content-price"
-          type="number"
-          id="admin-modal-price"
-          value={updateQuantity}
-        />
+          <br />
 
-        <br />
-
-        <button
-          className="admin-modal-button-create"
-          onClick={() => {
-            updateProduct(updateId, updateName, updatePrice, updateQuantity)
-          }}
-        >
-          Update
-        </button>
+          <button
+            className="admin-modal-button-create"
+            onClick={() => {
+              updateProduct(updateId, updateName, updatePrice, updateQuantity)
+            }}
+          >
+            Update
+          </button>
+        </form>
       </Modal>
     </Fragment>
   )
