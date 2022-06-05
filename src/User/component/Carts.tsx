@@ -145,7 +145,7 @@ export const Carts: React.FC = () => {
             className="shopping-cart-bill-checkout"
             onClick={handleCheckOut}
           >
-            <Link to="/">CHECK OUT</Link>
+            <Link className='shopping-cart-bill-checkout-link' to="/">CHECK OUT</Link>
           </button>
         </div>
       </div>

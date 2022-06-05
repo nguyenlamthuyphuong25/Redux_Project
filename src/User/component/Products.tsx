@@ -16,6 +16,7 @@ export const Products: React.FC = () => {
   const dispatch = useDispatch()
   const [isLogin, setIsLogin] = useState<boolean>(false)
   const navigate = useNavigate()
+  const [inputSearch, setInputSearch] = useState('');
 
   useEffect(() => {
     setIsLogin(false)
@@ -58,9 +59,18 @@ export const Products: React.FC = () => {
 
   return (
     <>
-      <h1 className="product-title">Products</h1>
+      <div className='product-title-search-container'>
+        <h1 className="product-title">Products</h1>
+        <input onChange={(e: any) => setInputSearch(e.target.value)} className="product-search-cart" placeholder='Search...' />
+      </div>
       {items.length > 0 &&
-        items.map((item: any, index: number) => {
+        items.filter((item: any) => {
+          if (inputSearch == "") {
+            return item
+          } else if (item.name.toLowerCase().includes(inputSearch.toLowerCase())) {
+            return item
+          }
+        }).map((item: any, index: number) => {
           return (
             <div className="product-items" key={index}>
               <div className="product-cart-info-img">
@@ -74,7 +84,7 @@ export const Products: React.FC = () => {
               <div className="product-cart-info">
                 <h3>{item.name} </h3>
                 <h4>{item.price}$ </h4>
-                <h4>{item.quantity} - left </h4>
+                
                 <button
                   className="add-to-cart"
                   onClick={() => {
@@ -83,6 +93,7 @@ export const Products: React.FC = () => {
                 >
                   Add
                 </button>
+                <h4 className='product-cart-repo'>Store: {item.quantity}</h4>
               </div>
             </div>
           )

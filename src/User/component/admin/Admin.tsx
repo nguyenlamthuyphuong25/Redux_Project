@@ -17,6 +17,7 @@ import Modal from 'react-modal'
 import { ref, uploadBytes } from 'firebase/storage'
 import { storage } from '../../../firestore-config'
 import { async } from '@firebase/util'
+import { clearCart } from '../../slices/UserSlice'
 
 export const Admin: React.FC = () => {
   const imagesListRef = ref(storage, 'Images/')
@@ -72,6 +73,22 @@ export const Admin: React.FC = () => {
     const userDoc = doc(db, 'Items', id)
     await deleteDoc(userDoc)
     setRender(!isRender)
+  }
+
+  const handleCheckOut = async () => {
+    for (var item of cart) {
+      const userDoc = doc(db, 'Items', item.id)
+      var qty = item.totalQuantity - item.quantity
+      if (qty === 0) {
+        deleteDoc(userDoc)
+      }
+      const newUpdateFields = {
+        quantity: qty
+      }
+      await updateDoc(userDoc, newUpdateFields)
+      console.log(userDoc)
+    }
+    dispatch(clearCart([]))
   }
 
   // function up hình

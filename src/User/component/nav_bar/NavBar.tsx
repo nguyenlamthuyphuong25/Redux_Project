@@ -45,9 +45,6 @@ export const NavBar: React.FC = () => {
       </nav>
 
       <div className="SearchNCart">
-        <span>
-          <ImSearch />
-        </span>
 
         <span>
           <Link to="/carts">

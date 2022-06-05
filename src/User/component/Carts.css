@@ -13,6 +13,14 @@
     margin-top: 1em;
 }
 
+.shopping-cart-bill-checkout-link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 100%;
+    color: #fff;
+    letter-spacing: 0.06em;
+}
+
 #shopping-cart-modal table {
     width: 60%;
 }
@@ -158,6 +166,14 @@
     overflow: scroll;
     scroll-snap-type: mandatory;
     overflow-x: hidden;
+}
+
+.shopping-cart-bill-checkout-link {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 100%;
+    color: #fff;
+    letter-spacing: 0.06em;
 }
 
 #shopping-cart-modal table {

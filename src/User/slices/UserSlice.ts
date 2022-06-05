@@ -68,9 +68,12 @@ export const userSlice = createSlice({
             state.cart = state.cart.filter(item => {
                 return item.id !== state.cart[action.payload].id
             })
+        }, 
+        clearCart: (state, action) => {
+            state.cart = []
         }
     }
 });
 
 export default userSlice.reducer;
-export const { addToCart, increaseQuantity, decreaseQuantity, delCart } = userSlice.actions;
+export const { addToCart, increaseQuantity, decreaseQuantity, delCart, clearCart } = userSlice.actions;
