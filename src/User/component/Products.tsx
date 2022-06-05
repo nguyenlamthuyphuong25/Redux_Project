@@ -16,7 +16,6 @@ export const Products: React.FC = () => {
   const dispatch = useDispatch()
   const [isLogin, setIsLogin] = useState<boolean>(false)
   const navigate = useNavigate()
-  const [inputSearch, setInputSearch] = useState('');
 
   useEffect(() => {
     setIsLogin(false)
@@ -59,30 +58,23 @@ export const Products: React.FC = () => {
 
   return (
     <>
-      <div className='product-title-search-container'>
-        <h1 className="product-title">Products</h1>
-        <input onChange={(e: any) => setInputSearch(e.target.value)} className="product-search-cart" placeholder='Search...' />
-      </div>
+      <h1 className="product-title">Products</h1>
       {items.length > 0 &&
-        items.filter((item: any) => {
-          if (inputSearch == "") {
-            return item
-          } else if (item.name.toLowerCase().includes(inputSearch.toLowerCase())) {
-            return item
-          }
-        }).map((item: any, index: number) => {
+        items.map((item: any, index: number) => {
           return (
             <div className="product-items" key={index}>
-              <div className="product-cart-info-img"><img
-                id="product-cart-img"
-                className="CartImg"
-                src={item.imgUrl}
-                alt="shop img"
-              />
+              <div className="product-cart-info-img">
+                <img
+                  id="product-cart-img"
+                  className="CartImg"
+                  src={item.imgUrl}
+                  alt="shop img"
+                />
               </div>
               <div className="product-cart-info">
                 <h3>{item.name} </h3>
                 <h4>{item.price}$ </h4>
+                <h4>{item.quantity} - left </h4>
                 <button
                   className="add-to-cart"
                   onClick={() => {

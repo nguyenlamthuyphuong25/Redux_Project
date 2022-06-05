@@ -5,4 +5,5 @@ export interface ICartItem {
     id: string,
     imgURL?: string,
     quantity: number,
+    totalQuantity: number,
 }

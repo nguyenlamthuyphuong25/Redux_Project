@@ -1,51 +1,71 @@
-import { FC, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { AppState } from "../store/store";
-import { db, storage, fetchImages } from "../../firestore-config";
-import { ICartItem } from "../model/cart-model";
-import { collection, getDocs } from "firebase/firestore";
+import { FC, useEffect, useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import { AppState } from '../store/store'
+import { db, storage, fetchImages } from '../../firestore-config'
+import { ICartItem } from '../model/cart-model'
+import {
+  collection,
+  deleteDoc,
+  doc,
+  getDocs,
+  updateDoc,
+} from 'firebase/firestore'
 import {
   increaseQuantity,
   decreaseQuantity,
   delCart,
-} from "../slices/UserSlice";
-import "./Carts.css";
+} from '../slices/UserSlice'
+import './Carts.css'
+import { Link } from 'react-router-dom'
 
 export const Carts: React.FC = () => {
-  const [items, setItems] = useState<any>([]);
-  const itemCollectionRef = collection(db, "Items");
-  const cart = useSelector((state: AppState) => state.users.cart);
-  const dispatch = useDispatch();
+  const [items, setItems] = useState<any>([])
+  const itemCollectionRef = collection(db, 'Items')
+  const cart = useSelector((state: AppState) => state.users.cart)
+  const dispatch = useDispatch()
 
-  useEffect(() => {
-    const getItems = async () => {
-      const data = await getDocs(itemCollectionRef);
-      var tmpItems: any = data.docs.map((doc) => ({
-        ...doc.data(),
-        id: doc.id,
-      }));
+  // useEffect(() => {
+  //   const getItems = async () => {
+  //     const data = await getDocs(itemCollectionRef)
+  //     var tmpItems: any = data.docs.map((doc) => ({
+  //       ...doc.data(),
+  //       id: doc.id,
+  //     }))
 
-      for (var item of tmpItems) {
-        console.log("GET IMAGE FOR " + item.name);
-        var imgUrl = await fetchImages(`Images/${item.imgName}`);
-        item.imgUrl = imgUrl;
-      }
-      setItems(tmpItems);
-      console.log(tmpItems);
-    };
-    getItems();
-  }, []);
+  //     for (var item of tmpItems) {
+  //       console.log('GET IMAGE FOR ' + item.name)
+  //       var imgUrl = await fetchImages(`Images/${item.imgName}`)
+  //       item.imgUrl = imgUrl
+  //     }
+  //     setItems(tmpItems)
+  //     console.log(tmpItems)
+  //   }
+  //   getItems()
+  // }, [])
 
   const result = cart.reduce(
     (total, currentValue) =>
       (total = total + currentValue.price * currentValue.quantity),
-    0
-  );
+    0,
+  )
 
   const itemCount = cart.reduce(
     (total, currentValue) => (total = total + currentValue.quantity),
-    0
-  );
+    0,
+  )
+
+  const handleCheckOut = async () => {
+    for (var item of cart) {
+      const userDoc = doc(db, 'Items', item.id)
+      var qty = item.totalQuantity - item.quantity
+      if (qty === 0) {
+        deleteDoc(userDoc)
+      }
+      const newUpdateFields = { quantity: qty }
+      await updateDoc(userDoc, newUpdateFields)
+      console.log(userDoc)
+    }
+  }
 
   return (
     <div>
@@ -80,7 +100,7 @@ export const Carts: React.FC = () => {
                     >
                       -
                     </button>
-                    {item.quantity}
+                    {item.quantity} : {item.totalQuantity}
                     <button
                       className="increase-button button"
                       onClick={() => dispatch(increaseQuantity(index))}
@@ -100,7 +120,7 @@ export const Carts: React.FC = () => {
                   </td>
                 </tr>
               </tbody>
-            );
+            )
           })}
         </table>
 
@@ -121,9 +141,14 @@ export const Carts: React.FC = () => {
             </div>
             <br />
           </div>
-          <button className="shopping-cart-bill-checkout">CHECKOUT</button>
+          <button
+            className="shopping-cart-bill-checkout"
+            onClick={handleCheckOut}
+          >
+            <Link to="/">CHECK OUT</Link>
+          </button>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

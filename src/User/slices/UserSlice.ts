@@ -19,8 +19,16 @@ export const userSlice = createSlice({
             let check = false;
             state.cart.map((item, key) => {
                 if (item.id == action.payload.id) {
-                    state.cart[key].quantity++;
-                    check = true;
+
+                    if (state.cart[key].quantity >= state.cart[key].totalQuantity) {
+                        check = true;
+                        return;
+                    } else {
+                        state.cart[key].quantity++;
+                        check = true;
+                    }
+
+
 
                 }
             });
@@ -31,15 +39,21 @@ export const userSlice = createSlice({
                     name: action.payload.name,
                     imgUrl: action.payload.imgURL,
                     price: action.payload.price,
-                    imgName: action.payload.imgName
+                    imgName: action.payload.imgName,
+                    totalQuantity: action.payload.quantity
+
                 }
-                state.cart.push(cart);
+                state.cart.push({ ...cart });
 
             }
         },
         increaseQuantity: (state, action) => {
+            var qty = state.cart[action.payload].quantity
+            if (qty >= state.cart[action.payload].totalQuantity) {
+                return
+            } else
 
-            state.cart[action.payload].quantity = state.cart[action.payload].quantity + 1
+                state.cart[action.payload].quantity = state.cart[action.payload].quantity + 1
         },
         decreaseQuantity: (state, action) => {
             let quantity = state.cart[action.payload].quantity;
